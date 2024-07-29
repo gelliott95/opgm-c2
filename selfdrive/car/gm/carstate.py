@@ -42,7 +42,7 @@ class CarState(CarStateBase):
       gmGear = "P"
     
     ret.gearShifter = self.parse_gear_shifter(gmGear)
-    ret.brakePressed = pt_cp.vl["ECMEngineStatus"]["Brake_Pressed"] != 0
+    ret.brakePressed = pt_cp.vl["ECMEngineStatus"]["BrakePressed"] != 0
     ret.brake = 0.
     
     if ret.brakePressed:
@@ -126,7 +126,7 @@ class CarState(CarStateBase):
       ("LKATorqueDeliveredStatus", "PSCMStatus"),
       ("TractionControlOn", "ESPStatus"),
       ("CruiseMainOn", "ECMEngineStatus"),
-      ("Brake_Pressed", "ECMEngineStatus"),
+      ("BrakePressed", "ECMEngineStatus"),
     ]
 
     checks = [
